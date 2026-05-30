@@ -1,4 +1,4 @@
-# Scraper de Arcos de Carreira no Transfermarkt
+# Arcos de Carreira no Transfermarkt
 Este projeto contém o script `transfermarkt_scraping.py`, usado para coletar dados de jogadores no Transfermarkt e gerar arquivos `.csv` para análise de arcos de carreira.
 
 O script percorre competições, temporadas, elencos e perfis de jogadores e salva informações de:
