@@ -171,38 +171,45 @@ Os códigos/scripts utilizados para realizar ambas as etapas estão disponíveis
 ##  Pré-processamento
 As principais ações de pré-processamento aplicadas ao projeto são:
 
-1. Padronizar datas
-   - `birth_date`
-   - `valuation_date`
-   - datas de lesão
-   - datas de transferência
+- **Padronização de datas**
+  - conversão de datas do perfil dos jogadores, como `birth_date`, `club_since`, `contract_until`, `last_contract_extension` e `current_market_value_date`;
+  - conversão de `valuation_date` no histórico de valores de mercado;
+  - conversão de `from_date` e `to_date` na base de lesões;
+  - conversão de `transfer_date` e `contract_until` na base de transferências.
 
-2. Padronizar texto
-   - nomes de clubes
-   - posições
-   - nomes de lesões
-   - nacionalidade
+- **Padronização e limpeza de texto**
+  - normalização do grupo de posição em `position_group`;
+  - remoção de espaços extras em `nationality` e `position_detail`;
+  - remoção de espaços extras em `club_at_valuation`;
+  - remoção de espaços extras no campo `injury`.
 
-3. Detectar duplicatas
-   - chave principal: `player_id + valuation_date`
+- **Conversão de variáveis numéricas**
+  - conversão de `age_current` e `current_market_value_eur`;
+  - conversão de `market_value_eur`;
+  - conversão de `days_out` e `games_missed`;
+  - conversão de `age_at_transfer`, `market_value_eur` e `transfer_fee_eur`;
+  - conversão de `tm_season_id`, `minutes_est` e `appearances_est`.
 
-4. Revisão estrutural
-   - frequência por posição
-   - histograma de idade
-   - histograma de valor de mercado
-   - boxplot do valor por posição
-   - mínimo e máximo de idade e valor
+- **Remoção de duplicatas**
+  - em `profiles`, por `player_id`;
+  - em `market_values`, por `player_id + valuation_date`;
+  - em `injuries`, por `player_id + injury + from_date + to_date_filled`;
+  - em `transfers`, por `player_id + transfer_id`;
+  - em `performance_summaries`, por `player_id + performance_year`.
 
-5. Tratamento de outliers
-   - idade negativa ou acima de faixa plausível: erro
-   - valor de mercado zero ou extremamente improvável: revisar
-   - saltos bruscos no histórico: verificar se são erro ou mudança real
+- **Tratamento de registros inválidos ou incompletos**
+  - remoção de valores de mercado sem `valuation_date`;
+  - remoção de valores de mercado sem `market_value_eur`;
+  - remoção de valores de mercado negativos;
+  - remoção de transferências sem `transfer_date`;
+  - preenchimento de `to_date_filled` em lesões quando `to_date` está ausente.
 
-6. Tratamento de missing
-   - se a variável for periférica, pode ficar ausente
-   - se for central, como data de nascimento, precisa de correção ou exclusão
-   - para quantitativas secundárias, testar imputação simples
-   - para categóricas, usar categoria “Desconhecido” quando fizer sentido
+- **Filtragem final e relatórios de qualidade**
+  - manutenção apenas de registros com idade entre 14 e 45 anos;
+  - manutenção apenas de registros com `position_group`, `valuation_date` e `market_value_eur` válidos;
+  - exportação das bases limpas em `cleaned/`;
+  - geração de `analytical_dataset.csv`;
+  - geração de `data_quality_summary.csv`, `missing_summary.csv` e `cleaning_summary.json`.
 
 
 ## Transformações
