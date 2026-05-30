@@ -212,7 +212,7 @@ As principais ações de pré-processamento aplicadas ao projeto são:
   - geração de `data_quality_summary.csv`, `missing_summary.csv` e `cleaning_summary.json`.
 
 
-## Transformações
+<!-- ## Transformações
 As transformações aplicadas ao projeto são:
 
 1. Cálculo da idade na data da avaliação
@@ -257,6 +257,6 @@ As transformações aplicadas ao projeto são:
 Executar processo de pré-processamento e trasformações:
 ```bash
 python python scripts/clean_base.py --input-dir --output-dir 
-```
+``` -->
 ---
 ---
