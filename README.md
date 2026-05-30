@@ -9,7 +9,6 @@ O script percorre competições, temporadas, elencos e perfis de jogadores e sal
 - lesões;
 - transferências;
 - resumo de desempenho por temporada;
-- base consolidada para análise (`career_arcs_base.csv`).
 
 ## Requisitos
 - Python 3.10+;
@@ -20,11 +19,14 @@ Instalação:
 ```bash
 pip install -r requirements.txt
 ```
-
 ---
 ---
+# Pipeline Scraper
+<p align="center">
+  <img src="images/scraping_flow.png" alt="Pipeline operacional do scraper" width="600">
+</p>
 
-# Como executar
+## Como executar
 Execução padrão:
 ```bash
 python transfermarkt_scraping.py
@@ -138,6 +140,10 @@ Dentro da pasta definida em `--out`, o script gera:
 - agrega colunas de perfil como `player_name`, `full_name`, `birth_date`, `nationality`, `position_group` e `position_detail`;
 - calcula `age_years` na data de cada avaliação de mercado.
 
+<p align="center">
+  <img src="images/tables.png" alt="Relacional Tabelas" width="600">
+</p>
+
 ## Observações importantes
 - O script depende da estrutura HTML atual do Transfermarkt. Se o site mudar, alguma etapa pode parar de extrair dados corretamente.
 - O filtro `--nationality-filter` é aplicado no fim da coleta. Ou seja, ele reduz os arquivos finais, mas não evita a raspagem anterior.
@@ -170,6 +176,10 @@ Os códigos/scripts utilizados para realizar ambas as etapas estão disponíveis
 
 ##  Pré-processamento
 As principais ações de pré-processamento aplicadas ao projeto são:
+
+<p align="center">
+  <img src="images/pre_processing_flow.png" alt="Etapas Pré-Processamento" width="600">
+</p>
 
 - **Padronização de datas**
   - conversão de datas do perfil dos jogadores, como `birth_date`, `club_since`, `contract_until`, `last_contract_extension` e `current_market_value_date`;
@@ -211,6 +221,22 @@ As principais ações de pré-processamento aplicadas ao projeto são:
   - geração de `analytical_dataset.csv`;
   - geração de `data_quality_summary.csv`, `missing_summary.csv` e `cleaning_summary.json`.
 
+## Transformações
+Esta etapa ainda não foi executada no projeto, mas representa uma fase futura importante para preparar os dados para a mineração e modelagem. A ideia é, a partir da base já limpa e consolidada, avaliar diferentes formas de transformar os atributos disponíveis, tornando-os mais adequados para análises estatísticas, identificação de padrões e construção de modelos preditivos.
+
+Entre as possíveis abordagens, pretende-se considerar:
+
+<p align="center">
+  <img src="images/feature_eng.png" alt="Abordagens para Transformação do Conjunto de Dados." width="600">
+</p>
+
+- discretização de variáveis contínuas, como idade, valor de mercado e tempo de carreira;
+- criação de variáveis dummies para atributos categóricos, como posição, nacionalidade ou tipo de transferência;
+- redução de dimensionalidade, caso o conjunto de variáveis se torne muito amplo;
+- transformações multivariadas para combinar informações relacionadas;
+- construção de novos atributos derivados, capazes de representar melhor a trajetória dos jogadores ao longo do tempo.
+
+Essas transformações ainda serão definidas de acordo com os objetivos analíticos das próximas etapas, considerando a qualidade dos dados disponíveis, a interpretabilidade dos atributos e a contribuição de cada transformação para a análise dos arcos de carreira.
 
 <!-- ## Transformações
 As transformações aplicadas ao projeto são:
