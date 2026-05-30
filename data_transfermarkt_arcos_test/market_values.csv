@@ -1,0 +1,165 @@
+player_id,player_slug,valuation_date,market_value_eur,club_at_valuation,source_pattern
+352324,agustin-rossi,2015-07-14,750000,Club Estudiantes de La Plata,tmapi_market_value_history
+352324,agustin-rossi,2016-02-06,700000,Club Estudiantes de La Plata,tmapi_market_value_history
+352324,agustin-rossi,2016-08-08,750000,Defensa y Justicia,tmapi_market_value_history
+352324,agustin-rossi,2017-02-13,1000000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2017-10-09,2000000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2018-05-08,2500000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2018-12-18,2750000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2019-05-22,2500000,Deportes Antofagasta,tmapi_market_value_history
+352324,agustin-rossi,2019-08-06,2000000,CA Lanús,tmapi_market_value_history
+352324,agustin-rossi,2019-12-05,2000000,CA Lanús,tmapi_market_value_history
+352324,agustin-rossi,2020-04-08,1600000,CA Lanús,tmapi_market_value_history
+352324,agustin-rossi,2021-02-08,2000000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2021-10-20,3200000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2022-05-24,3500000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2022-09-06,5000000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2022-10-26,7000000,CA Boca Juniors,tmapi_market_value_history
+352324,agustin-rossi,2023-06-12,6000000,Al-Nassr FC,tmapi_market_value_history
+352324,agustin-rossi,2023-12-11,6000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2024-03-28,6000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2024-06-17,7000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2024-12-09,7000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2025-06-06,7000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2025-09-05,8000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2025-12-10,10000000,CR Flamengo,tmapi_market_value_history
+352324,agustin-rossi,2026-05-26,10000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2022-08-19,150000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2022-11-14,150000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2023-04-07,450000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2023-07-25,3000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2023-12-11,3000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2024-03-28,3000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2024-06-17,3000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2024-12-09,3000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2025-06-06,3000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2025-09-05,2500000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2025-12-10,2000000,CR Flamengo,tmapi_market_value_history
+876739,matheus-cunha,2026-05-26,3000000,Cruzeiro EC,tmapi_market_value_history
+1087843,lucas-furtado,2025-09-25,100000,Vitória Guimarães SC B,tmapi_market_value_history
+1087843,lucas-furtado,2025-12-18,100000,Vitória Guimarães SC B,tmapi_market_value_history
+1082543,dyogo-alves,2025-03-28,400000,CR Flamengo,tmapi_market_value_history
+1082543,dyogo-alves,2025-06-06,400000,CR Flamengo,tmapi_market_value_history
+1082543,dyogo-alves,2025-12-10,400000,CR Flamengo,tmapi_market_value_history
+1082543,dyogo-alves,2026-05-26,400000,CR Flamengo,tmapi_market_value_history
+1082544,joao-vitor,2025-02-27,75000,ASD Cairese,tmapi_market_value_history
+1082544,joao-vitor,2025-05-15,100000,ASD Cairese,tmapi_market_value_history
+1082544,joao-vitor,2025-11-12,50000,Enna Calcio,tmapi_market_value_history
+1082544,joao-vitor,2026-05-26,25000,Enna Calcio,tmapi_market_value_history
+374136,leo-ortiz,2017-10-30,200000,SC Internacional,tmapi_market_value_history
+374136,leo-ortiz,2017-12-07,200000,SC Internacional,tmapi_market_value_history
+374136,leo-ortiz,2018-05-23,200000,Sport Recife,tmapi_market_value_history
+374136,leo-ortiz,2020-02-20,800000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2020-04-08,650000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2020-09-09,1000000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2021-02-09,1500000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2021-05-28,2000000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2021-09-10,4000000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2021-12-17,7500000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2022-04-06,7500000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2022-08-19,7500000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2022-11-14,7500000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2023-04-07,6000000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2023-07-25,6000000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2023-12-11,7000000,RB Bragantino,tmapi_market_value_history
+374136,leo-ortiz,2024-03-28,7000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2024-06-17,8000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2024-09-27,9000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2024-12-09,11000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2025-03-28,12000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2025-06-06,13000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2025-09-05,15000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2025-12-10,15000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2026-03-12,14000000,CR Flamengo,tmapi_market_value_history
+374136,leo-ortiz,2026-05-26,12000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2014-08-07,1000000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2015-02-01,3000000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2015-05-31,3000000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2015-12-15,2000000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2016-05-27,1500000,Náutico,tmapi_market_value_history
+288431,leo-pereira,2016-07-23,1400000,Náutico,tmapi_market_value_history
+288431,leo-pereira,2016-11-28,1200000,Náutico,tmapi_market_value_history
+288431,leo-pereira,2017-05-24,1200000,Orlando City SC,tmapi_market_value_history
+288431,leo-pereira,2017-12-05,750000,Orlando City SC,tmapi_market_value_history
+288431,leo-pereira,2018-05-23,700000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2019-02-18,1750000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2019-11-27,2500000,Athletico Paranaense,tmapi_market_value_history
+288431,leo-pereira,2020-02-20,5000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2020-04-08,4000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2020-09-09,5000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2021-02-09,3500000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2021-05-28,3000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2021-12-17,3500000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2022-04-06,3500000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2022-08-19,3500000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2022-11-14,4000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2023-04-07,4000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2023-07-25,4000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2023-12-11,5500000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2024-03-28,7000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2024-06-17,8000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2024-09-27,9000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2024-12-09,9000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2025-06-06,8000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2025-09-05,9000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2025-12-10,10000000,CR Flamengo,tmapi_market_value_history
+288431,leo-pereira,2026-05-26,12000000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2016-05-27,100000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2016-11-28,250000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2017-12-07,1000000,Chapecoense,tmapi_market_value_history
+432773,fabricio-bruno,2018-05-23,900000,Chapecoense,tmapi_market_value_history
+432773,fabricio-bruno,2019-02-18,900000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2019-11-27,1300000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2020-04-08,1000000,RB Bragantino,tmapi_market_value_history
+432773,fabricio-bruno,2020-09-09,1000000,RB Bragantino,tmapi_market_value_history
+432773,fabricio-bruno,2021-02-09,950000,RB Bragantino,tmapi_market_value_history
+432773,fabricio-bruno,2021-05-28,1200000,RB Bragantino,tmapi_market_value_history
+432773,fabricio-bruno,2021-12-17,3000000,RB Bragantino,tmapi_market_value_history
+432773,fabricio-bruno,2022-04-06,3500000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2022-08-19,3500000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2022-11-14,3500000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2023-04-07,3500000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2023-07-25,3000000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2023-12-11,3000000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2024-03-28,3000000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2024-06-17,6000000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2024-12-09,7000000,CR Flamengo,tmapi_market_value_history
+432773,fabricio-bruno,2025-06-06,8000000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2025-09-05,10000000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2025-12-10,12000000,Cruzeiro EC,tmapi_market_value_history
+432773,fabricio-bruno,2026-05-26,12000000,Cruzeiro EC,tmapi_market_value_history
+149577,pablo,2010-06-06,50000,Ceará SC,tmapi_market_value_history
+149577,pablo,2010-09-06,150000,Ceará SC,tmapi_market_value_history
+149577,pablo,2011-08-29,50000,Ceará SC,tmapi_market_value_history
+149577,pablo,2011-12-08,50000,Ceará SC,tmapi_market_value_history
+149577,pablo,2012-05-24,50000,Grêmio FBPA,tmapi_market_value_history
+149577,pablo,2012-12-05,50000,Grêmio FBPA,tmapi_market_value_history
+149577,pablo,2013-04-11,0,Avaí FC,tmapi_market_value_history
+149577,pablo,2014-12-26,600000,Avaí FC,tmapi_market_value_history
+149577,pablo,2015-02-01,750000,AA Ponte Preta,tmapi_market_value_history
+149577,pablo,2015-05-31,1500000,AA Ponte Preta,tmapi_market_value_history
+149577,pablo,2015-09-06,2000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2016-02-04,1750000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2016-07-13,1750000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2017-01-16,1250000,SC Corinthians,tmapi_market_value_history
+149577,pablo,2018-01-24,1250000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2018-06-04,3000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2018-12-17,10000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2019-06-03,10000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2019-12-19,10000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2020-04-08,8000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2020-10-15,8000000,FCG Bordeaux,tmapi_market_value_history
+149577,pablo,2021-06-02,9000000,Lokomotiv Moscou,tmapi_market_value_history
+149577,pablo,2021-12-29,8000000,Lokomotiv Moscou,tmapi_market_value_history
+149577,pablo,2022-04-06,7000000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2022-08-19,4000000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2022-11-14,3500000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2023-04-07,3000000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2023-07-25,2000000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2023-12-11,1700000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2024-03-28,1500000,Botafogo FR,tmapi_market_value_history
+149577,pablo,2024-06-17,1200000,Botafogo FR,tmapi_market_value_history
+149577,pablo,2024-12-09,900000,Botafogo FR,tmapi_market_value_history
+149577,pablo,2025-06-06,600000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2025-12-10,500000,CR Flamengo,tmapi_market_value_history
+149577,pablo,2026-05-19,350000,São Bernardo FC,tmapi_market_value_history
