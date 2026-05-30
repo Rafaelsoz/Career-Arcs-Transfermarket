@@ -47,14 +47,14 @@ python transfermarkt_scraping.py \
   --display-end 2024 \
   --max-players 10 \
   --workers 1 \
-  --out data_transfermarkt_arcos_test
+  --out data_transfermarkt_test
 ```
 
 Filtrar o conjunto final para jogadores brasileiros:
 ```bash
 python transfermarkt_scraping.py \
   --nationality-filter Brasil \
-  --out data_transfermarkt_arcos_br
+  --out data_transfermarkt_br
 ```
 
 Executar com logs detalhados:
@@ -130,7 +130,7 @@ Dentro da pasta definida em `--out`, o script gera:
 
 `performance_summaries.csv`
 - `player_id`, `player_slug`, `tm_season_id`, `season_label`
-- `summary_row_text`, `metric_*`
+- `summary_row_text`, `metric_-`
 - `minutes_est`, `appearances_est`
 
 `career_arcs_base.csv`
@@ -155,5 +155,101 @@ Exemplo:
 - `tm_season_id = 2017`
 - `season_label = 17/18`
 
+---
+---
+
+# Pré-processamento e Transformações
+Após a coleta e a consolidação dos arquivos gerados pelo `transfermarkt_scraping.py`, a base passa por uma etapa de pré-processamento para garantir que os dados estejam consistentes, comparáveis e adequados às análises de arcos de carreira. Ademais, se faz preciso também passar por uma etapa de transformação, responsável por converter o dado bruto em uma forma padrão para mineração, incluindo discretizações, criação de dummies, redução de dimensionalidade, transformações multivariadas e construção de novos atributos. 
+
+Com essas etapas, a base final deixa de ser apenas uma consolidação dos dados coletados e passa a representar uma estrutura analítica voltada ao estudo dos arcos de carreira. Assim, cada registro combina informações de perfil, valor de mercado, idade, posição, lesões, transferências e desempenho, permitindo análises mais consistentes sobre a evolução dos jogadores ao longo do tempo.
+
+Os códigos/scripts utilizados para realizar ambas as etapas estão disponíveis em:
+- `script/commom.py`: contém majoritariamente o código modularizado utilizado no pré-processamento;
+- `script/clean_base.py`: contém o código responsável por executar o pré-processamento e as transformações aplicadas à base.
+
+
+##  Pré-processamento
+As principais ações de pré-processamento aplicadas ao projeto são:
+
+1. Padronizar datas
+   - `birth_date`
+   - `valuation_date`
+   - datas de lesão
+   - datas de transferência
+
+2. Padronizar texto
+   - nomes de clubes
+   - posições
+   - nomes de lesões
+   - nacionalidade
+
+3. Detectar duplicatas
+   - chave principal: `player_id + valuation_date`
+
+4. Revisão estrutural
+   - frequência por posição
+   - histograma de idade
+   - histograma de valor de mercado
+   - boxplot do valor por posição
+   - mínimo e máximo de idade e valor
+
+5. Tratamento de outliers
+   - idade negativa ou acima de faixa plausível: erro
+   - valor de mercado zero ou extremamente improvável: revisar
+   - saltos bruscos no histórico: verificar se são erro ou mudança real
+
+6. Tratamento de missing
+   - se a variável for periférica, pode ficar ausente
+   - se for central, como data de nascimento, precisa de correção ou exclusão
+   - para quantitativas secundárias, testar imputação simples
+   - para categóricas, usar categoria “Desconhecido” quando fizer sentido
+
+
+## Transformações
+As transformações aplicadas ao projeto são:
+
+1. Cálculo da idade na data da avaliação
+   - `age_years = (valuation_date - birth_date) / 365.25`
+
+2. Transformação do valor
+   - criar `log_market_value = log(1 + market_value_eur)`
+
+3. Agrupamento de posição
+   - Goleiro
+   - Defesa
+   - Meio-campo
+   - Ataque
+
+4. Dummies de posição
+   - para regressões e modelos mistos
+
+5. Variáveis de trajetória
+   - `career_year`
+   - `time_since_first_valuation`
+   - `n_valuations_so_far`
+
+6. Variáveis derivadas de lesão
+   - dias lesionado nos últimos 12 meses
+   - jogos perdidos acumulados
+   - dummy de lesão grave
+   - dummy de lesão recente
+
+7. Variáveis derivadas de transferência
+   - número de transferências
+   - transferência recente
+   - mudança internacional
+   - mudança de divisão
+
+8. Variáveis de desempenho
+   - jogos por temporada
+   - minutos estimados
+   - métricas ofensivas por 90, quando disponíveis
+   - resumo da temporada mais próxima da avaliação
+
+### Exemplo de uso
+Executar processo de pré-processamento e trasformações:
+```bash
+python python scripts/clean_base.py --input-dir --output-dir 
+```
 ---
 ---

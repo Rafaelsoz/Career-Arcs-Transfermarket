@@ -1,0 +1,13 @@
+{
+  "input_dir": "/home/rafaelsoz/icmc/SME/Transfermarket/data_transfermarkt_arcos",
+  "output_dir": "/home/rafaelsoz/icmc/SME/Transfermarket/results",
+  "analytical_rows": 62678,
+  "analytical_players": 4805,
+  "players_with_3_vals": 4292,
+  "players_with_4_vals": 3948,
+  "age_min": 16.05201916495551,
+  "age_max": 44.681724845995895,
+  "market_value_zero_share": 0.05576119212482849,
+  "injury_recent_share": 0.1513130604039695,
+  "transfer_recent_share": 0.6438941893487348
+}

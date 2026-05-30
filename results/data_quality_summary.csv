@@ -1,0 +1,9 @@
+dataset,raw_rows,clean_rows,rows_removed,unique_players_clean
+profiles,6276,6276,0,6276
+market_values,62752,62752,0,4812
+injuries,8827,8827,0,2193
+transfers,71851,71829,22,6113
+performance_summaries,55420,55420,0,6270
+squad_membership,19424,19424,0,6278
+career_arcs_base,62752,62752,0,4812
+analytical_dataset,62752,62678,74,4805

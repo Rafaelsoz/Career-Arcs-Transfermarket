@@ -990,7 +990,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--display-end", type=int, default=2026)
     p.add_argument("--competitions", nargs="+", default=["BRA1", "BRA2"])
     p.add_argument("--nationality-filter", default=None, help='Ex.: "Brasil"')
-    p.add_argument("--out", default="data_transfermarkt_arcos")
+    p.add_argument("--out", default="data_transfermarkt")
     p.add_argument("--min-sleep", type=float, default=1.0)
     p.add_argument("--max-sleep", type=float, default=2.0)
     p.add_argument("--max-players", type=int, default=None)
