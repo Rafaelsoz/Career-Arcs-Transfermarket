@@ -91,7 +91,7 @@ Se você passar outros códigos sem antes alterar o dicionário `COMPETITION_SLU
 ---
 ---
 
-# Estrutura da saída
+# Estrutura dos Dados
 Dentro da pasta definida em `--out`, o script gera:
 
 - `squad_membership.csv`: relação jogador-clube-temporada encontrada nos elencos.
@@ -103,6 +103,11 @@ Dentro da pasta definida em `--out`, o script gera:
 - `career_arcs_base.csv`: base consolidada com perfil + valores de mercado + idade estimada.
 - `cache/`: HTMLs salvos para reaproveitar requisições.
 - `debug/`: páginas salvas quando o histórico de valor de mercado não pôde ser extraído.
+
+<p align="center">
+  <img src="images/tables.png" alt="Relacional Tabelas" width="600">
+</p>
+
 
 ## Colunas principais
 `squad_membership.csv`
@@ -139,10 +144,6 @@ Dentro da pasta definida em `--out`, o script gera:
 - herda dados de `market_values.csv`;
 - agrega colunas de perfil como `player_name`, `full_name`, `birth_date`, `nationality`, `position_group` e `position_detail`;
 - calcula `age_years` na data de cada avaliação de mercado.
-
-<p align="center">
-  <img src="images/tables.png" alt="Relacional Tabelas" width="600">
-</p>
 
 ## Observações importantes
 - O script depende da estrutura HTML atual do Transfermarkt. Se o site mudar, alguma etapa pode parar de extrair dados corretamente.
