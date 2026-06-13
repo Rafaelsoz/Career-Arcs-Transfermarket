@@ -223,67 +223,107 @@ As principais ações de pré-processamento aplicadas ao projeto são:
   - geração de `data_quality_summary.csv`, `missing_summary.csv` e `cleaning_summary.json`.
 
 ## Transformações
-Esta etapa ainda não foi executada no projeto, mas representa uma fase futura importante para preparar os dados para a mineração e modelagem. A ideia é, a partir da base já limpa e consolidada, avaliar diferentes formas de transformar os atributos disponíveis, tornando-os mais adequados para análises estatísticas, identificação de padrões e construção de modelos preditivos.
 
-Entre as possíveis abordagens, pretende-se considerar:
+Esta etapa é responsável por transformar a base dados limpa em uma estrutura mais adequada para análise longitudinal, mineração de dados e modelagem. A partir das tabelas tratadas, o script constrói uma base analítica enriquecida, na qual cada registro representa uma avaliação de valor de mercado de um jogador em determinado momento da carreira.
+
+Inicialmente, foram consideradas diferentes abordagens de transformação para o conjunto de dados, conforme sintetizado na imagem abaixo:
 
 <p align="center">
-  <img src="images/feature_eng.png" alt="Abordagens para Transformação do Conjunto de Dados." width="600">
+  <img src="images/feature_eng.png" alt="Abordagens para transformação do conjunto de dados" width="600">
 </p>
+
+Entre as possibilidades avaliadas, estavam:
 
 - discretização de variáveis contínuas, como idade, valor de mercado e tempo de carreira;
 - criação de variáveis dummies para atributos categóricos, como posição, nacionalidade ou tipo de transferência;
-- redução de dimensionalidade, caso o conjunto de variáveis se torne muito amplo;
+- redução de dimensionalidade, caso o conjunto de variáveis se tornasse muito amplo;
 - transformações multivariadas para combinar informações relacionadas;
 - construção de novos atributos derivados, capazes de representar melhor a trajetória dos jogadores ao longo do tempo.
 
-Essas transformações ainda serão definidas de acordo com os objetivos analíticos das próximas etapas, considerando a qualidade dos dados disponíveis, a interpretabilidade dos atributos e a contribuição de cada transformação para a análise dos arcos de carreira.
+Após a análise da base disponível e dos objetivos desta etapa, as transformações efetivamente aplicadas foram:
 
-<!-- ## Transformações
-As transformações aplicadas ao projeto são:
+- **Transformações no perfil dos jogadores**
+  - normalização do grupo de posição em `position_group`;
 
-1. Cálculo da idade na data da avaliação
-   - `age_years = (valuation_date - birth_date) / 365.25`
+- **Transformações no histórico de valores de mercado**
+  - associação dos valores de mercado com informações selecionadas do perfil do jogador;
+  - construção da base longitudinal a partir da junção entre `market_values` e `profiles`.
 
-2. Transformação do valor
-   - criar `log_market_value = log(1 + market_value_eur)`
+- **Transformações temporais e de trajetória**
+  - cálculo de `age_years`, representando a idade do jogador na data da avaliação;
+  - identificação da primeira avaliação de mercado em `first_valuation_date`;
+  - cálculo de `time_since_first_valuation_days`;
+  - cálculo de `career_year`, representando o tempo de carreira observado desde a primeira avaliação;
+  - criação de `n_valuations_total`, indicando o total de avaliações disponíveis por jogador;
+  - criação de `n_valuations_so_far`, indicando a posição de cada avaliação dentro da trajetória do jogador;
+  - criação das flags `meets_min_3_vals` e `meets_min_4_vals`, usadas para identificar jogadores com quantidade mínima de avaliações.
 
-3. Agrupamento de posição
-   - Goleiro
-   - Defesa
-   - Meio-campo
-   - Ataque
+- **Transformação do valor de mercado**
+  - criação de `log_market_value`;
+  - aplicação da transformação `log(1 + market_value_eur)`, com o objetivo de reduzir a assimetria dos valores de mercado e facilitar análises estatísticas.
 
-4. Dummies de posição
-   - para regressões e modelos mistos
+- **Transformações derivadas de desempenho**
+  - associação de cada avaliação de mercado à temporada de desempenho anterior ou equivalente;
+  - criação de `performance_year_ref`, indicando o ano de desempenho usado como referência;
+  - criação de `season_label_ref`, indicando a temporada associada;
+  - criação de `performance_gap_years`, indicando a diferença entre o ano da avaliação e o ano de desempenho usado;
+  - incorporação de `minutes_est`, `appearances_est` e `minutes_per_appearance`.
 
-5. Variáveis de trajetória
-   - `career_year`
-   - `time_since_first_valuation`
-   - `n_valuations_so_far`
+- **Transformações derivadas de lesões**
+  - cálculo de `injury_count_last_365`, indicando o número de lesões nos 365 dias anteriores à avaliação;
+  - cálculo de `days_injured_last_365`, indicando a quantidade de dias lesionado no mesmo período;
+  - cálculo de `games_missed_last_365`, indicando jogos perdidos nos 365 dias anteriores;
+  - criação da flag `injury_recent`, indicando presença de lesão recente;
+  - criação da flag `injury_severe_last_365`, indicando ocorrência de lesão severa no período.
 
-6. Variáveis derivadas de lesão
-   - dias lesionado nos últimos 12 meses
-   - jogos perdidos acumulados
-   - dummy de lesão grave
-   - dummy de lesão recente
+- **Transformações derivadas de transferências**
+  - cálculo de `transfer_count_career`, indicando o número de transferências acumuladas até a data da avaliação;
+  - criação da flag `transfer_recent`, indicando transferência nos 365 dias anteriores à avaliação;
+  - criação da flag `international_transfer_recent`, indicando transferência internacional recente;
+  - criação da flag `competition_change_recent`, indicando mudança recente de competição;
+  - cálculo de `days_since_last_transfer`, indicando o número de dias desde a última transferência;
+  - incorporação de `last_transfer_fee_eur` e `last_transfer_market_value_eur`.
 
-7. Variáveis derivadas de transferência
-   - número de transferências
-   - transferência recente
-   - mudança internacional
-   - mudança de divisão
-
-8. Variáveis de desempenho
-   - jogos por temporada
-   - minutos estimados
-   - métricas ofensivas por 90, quando disponíveis
-   - resumo da temporada mais próxima da avaliação
+- **Geração da base analítica**
+  - criação de `career_arcs_base_enriched.csv`, contendo a base longitudinal enriquecida;
+  - criação de `analytical_dataset.csv`, contendo a base final filtrada para análise;
+  - geração dos relatórios `data_quality_summary.csv`, `missing_summary.csv` e `cleaning_summary.json`.
 
 ### Exemplo de uso
-Executar processo de pré-processamento e trasformações:
+
+Executar o processo de limpeza, transformação e geração da base analítica:
+
 ```bash
-python python scripts/clean_base.py --input-dir --output-dir 
-``` -->
+python scripts/clean_base.py --input-dir data_transfermarkt --output-dir results
+```
+
+# Resultado da Base Enriquecida
+A base enriquecida final, `career_arcs_base_enriched.csv`, consolida as informações de perfil, valor de mercado, desempenho, lesões e transferências em uma estrutura longitudinal. Cada linha representa uma avaliação de valor de mercado de um jogador em uma determinada data, acompanhada de atributos derivados que descrevem sua trajetória até aquele momento.
+
+A base possui **62.752 registros**, **40 colunas** e contempla **4.812 jogadores únicos**. As avaliações de valor de mercado vão de **04/10/2004** até **24/03/2026**, permitindo acompanhar a evolução dos jogadores ao longo do tempo.
+
+| Indicador | Valor |
+|---|---:|
+| Registros | 62.752 |
+| Colunas | 40 |
+| Jogadores únicos | 4.812 |
+| Data inicial de avaliação | 04/10/2004 |
+| Data final de avaliação | 24/03/2026 |
+| Valor mediano de mercado | €600.000 |
+| Maior valor de mercado | €200.000.000 |
+| Jogadores com pelo menos 3 avaliações | 4.299 |
+| Jogadores com pelo menos 4 avaliações | 3.955 |
+
+Em termos de posição, a base apresenta jogadores distribuídos entre os quatro grupos principais: ataque, defesa, meio-campo e goleiro. A maior parte dos registros está concentrada em jogadores de ataque, defesa e meio-campo, enquanto goleiros representam uma parcela menor da base.
+
+| Grupo de posição | Registros |
+|---|---:|
+| Ataque | 19.916 |
+| Defesa | 19.133 |
+| Meio-campo | 19.027 |
+| Goleiro | 4.676 |
+
+Assim, a base enriquecida fornece uma estrutura adequada para análises longitudinais dos arcos de carreira, permitindo relacionar valor de mercado, idade, posição, desempenho, histórico de lesões e movimentações entre clubes ao longo do tempo.
+
 ---
 ---
